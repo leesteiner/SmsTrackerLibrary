@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SmsTrackerLibrary
+namespace SmsTrackerLibrary.DataAccess
 {
-    public class Class1
-    {
-    }
+    public enum SessionType { Video, Audio, Reel, PianoTracks}
 }
