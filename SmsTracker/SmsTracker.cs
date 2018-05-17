@@ -15,6 +15,7 @@ namespace SmsTracker
     public partial class SmsTracker : Form
     {
         private List<Client> Clients { get; set; } = GlobalConfig.Connection.GetAllClients();
+        private Client returnClient { get; set; }
 
         public SmsTracker()
         {
@@ -68,12 +69,23 @@ namespace SmsTracker
             Client tempClient = (Client)clientListBox.SelectedItem;
             using (var v = new ViewClientForm(tempClient))
             {
-                tempClient = v.returnClient;
-                v.FormClosing += new FormClosingEventHandler(this.V_FormClosing);
-                v.ShowDialog();
+                var result = v.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    returnClient = v.returnClient;
+                    v.FormClosing += new FormClosingEventHandler(this.V_FormClosing);
+                }
 
             }
-            //ViewClientForm v = new ViewClientForm(tempClient);
+
+            Clients.Remove(tempClient);
+
+            //TODO: Use clients.Insert, capture clients (tempClient) index for insert position
+
+            Clients.Add(returnClient);
+
+            TextConnectorProcessor.SaveToClientFile(Clients, TextConnection.ClientFile);
+            WireUpLists();
             
 
         }

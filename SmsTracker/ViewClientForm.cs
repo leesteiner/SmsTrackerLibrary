@@ -27,14 +27,20 @@ namespace SmsTracker
 
         private void UpdateClientButton_Click(object sender, EventArgs e)
         {
-            this.returnClient = c;
+            Client test1 = new Client();
+            test1.FirstName = firstNameTextBox.Text;
+            test1.LastName = lastNameTextBox.Text;
+            test1.EmailAddress = emailAddressTextBox.Text;
+            test1.CellphoneNumber = cellPhoneNumberTextBox.Text;
             firstNameTextBox.Text = "";
             lastNameTextBox.Text = "";
             emailAddressTextBox.Text = "";
             cellPhoneNumberTextBox.Text = "";
+            this.returnClient = test1;
+            this.DialogResult = DialogResult.OK;
             this.Close();
 
-            //TODO: Find out how to return these values to variable
+            
         }
     }
 }

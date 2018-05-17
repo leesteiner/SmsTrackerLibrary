@@ -9,8 +9,8 @@ namespace SmsTrackerLibrary.DataAccess
 {
     public class TextConnection : IDataConnection
     {
-        private const string ClientFile = "Clients.csv";
-        private const string SessionFile = "Sessions.csv";
+        public const string ClientFile = "Clients.csv";
+        public const string SessionFile = "Sessions.csv";
 
         public Client CreateClient(Client model)
         {
