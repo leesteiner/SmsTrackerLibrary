@@ -93,6 +93,8 @@ namespace SmsTracker
             TextConnectorProcessor.SaveToClientFile(Clients, TextConnection.ClientFile);
             WireUpLists();
             clientListBox.SetSelected(editedClientPosition, true);
+
+            //TODO: Fix error of x'ing out of add client box. Changes record to NULL in JSON? - or replaces model with last edited one??
             
 
         }

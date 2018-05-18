@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SmsTracker
 {
     public partial class AddSessionForm : Form
@@ -80,6 +81,11 @@ namespace SmsTracker
                     NotesTextBox.Text);
 
                 GlobalConfig.Connection.CreateSession(model);
+                Client newlyIdedClient = Clients.Find(x => x.FullName == $"{model.client.FullName}");
+                selectedClient.SessionIds.Add(newlyIdedClient.Id);
+
+                //TextConnectorProcessor.SaveToClientFile(Clients, TextConnection.SessionFile);
+                //TODO: Save updated client.
                 this.Close();
 
                 //TODO: Add this.sessionID to client list of sessions Ids

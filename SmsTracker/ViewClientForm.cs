@@ -28,6 +28,7 @@ namespace SmsTracker
         private void UpdateClientButton_Click(object sender, EventArgs e)
         {
             Client test1 = new Client();
+            test1.Id = returnClient.Id;
             test1.FirstName = firstNameTextBox.Text;
             test1.LastName = lastNameTextBox.Text;
             test1.EmailAddress = emailAddressTextBox.Text;

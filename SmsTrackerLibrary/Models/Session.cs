@@ -26,12 +26,6 @@ namespace SmsTrackerLibrary.Models
 
         public Session() {}
 
-        public Session(Client name)
-        {
-            client = name;
-            
-        }
-
         public Session(Client c, DateTime time, decimal rate, SessionType type, bool paymentReceived, string notes)
         {
             client = c;
