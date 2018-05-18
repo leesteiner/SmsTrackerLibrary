@@ -16,6 +16,13 @@ namespace SmsTrackerLibrary.Models
         public SessionType Type { get; set; }
         public bool PaymentReceived { get; set; }
         public string Notes { get; set; }
+        public string basicSummary
+        {
+            get
+            {
+                return $"{Time} - {client.FullName}";
+            }
+        }
 
         public Session() {}
 
@@ -23,6 +30,16 @@ namespace SmsTrackerLibrary.Models
         {
             client = name;
             
+        }
+
+        public Session(Client c, DateTime time, decimal rate, SessionType type, bool paymentReceived, string notes)
+        {
+            client = c;
+            Time = time;
+            Rate = rate;
+            Type = type;
+            PaymentReceived = paymentReceived;
+            Notes = notes;
         }
     }
 }

@@ -12,5 +12,6 @@ namespace SmsTrackerLibrary.DataAccess
         Client CreateClient(Client model);
         Session CreateSession(Session model);
         List<Client> GetAllClients();
+        List<Session> GetAllSessions();
     }
 }

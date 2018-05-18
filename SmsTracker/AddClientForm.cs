@@ -27,7 +27,8 @@ namespace SmsTracker
                     FirstNameTextBox.Text,
                     LastNameTextBox.Text,
                     EmailAddressTextBox.Text,
-                    CellphoneNumberTextBox.Text);
+                    CellphoneNumberTextBox.Text,
+                    new List<int>());
 
                 GlobalConfig.Connection.CreateClient(model);
 

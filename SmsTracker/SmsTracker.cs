@@ -17,6 +17,10 @@ namespace SmsTracker
         private List<Client> Clients { get; set; } = GlobalConfig.Connection.GetAllClients();
         private Client returnClient { get; set; }
 
+        private List<Session> Sessions { get; set; } = GlobalConfig.Connection.GetAllSessions();
+        private Session returnSession { get; set; }
+
+
         public SmsTracker()
         {
             InitializeComponent();
@@ -35,15 +39,13 @@ namespace SmsTracker
         private void F_FormClosing(object sender, FormClosingEventArgs e)
         {
             WireUpLists();
-
-            //TODO: Set last added client as selected client in list
         }
 
         private void CreateSessionButton_Click(object sender, EventArgs e)
         {
             AddSessionForm s = new AddSessionForm();
 
-            s.FormClosed += new FormClosedEventHandler(Session_FormClosed);
+            s.FormClosing += new FormClosingEventHandler(this.F_FormClosing);
             s.ShowDialog();
 
         }
@@ -61,6 +63,11 @@ namespace SmsTracker
             clientListBox.DataSource = null;
             clientListBox.DataSource = Clients;
             clientListBox.DisplayMember = "FullName";
+
+            Sessions = GlobalConfig.Connection.GetAllSessions();
+            sessionListBox.DataSource = null;
+            sessionListBox.DataSource = Sessions;
+            sessionListBox.DisplayMember = "basicSummary";
         }
 
         private void ViewSelectedClientButton_Click(object sender, EventArgs e)
@@ -78,14 +85,14 @@ namespace SmsTracker
 
             }
 
+            int editedClientPosition = Clients.IndexOf(tempClient);
+            Clients.Insert(editedClientPosition, returnClient);
+
             Clients.Remove(tempClient);
-
-            //TODO: Use clients.Insert, capture clients (tempClient) index for insert position
-
-            Clients.Add(returnClient);
-
+            
             TextConnectorProcessor.SaveToClientFile(Clients, TextConnection.ClientFile);
             WireUpLists();
+            clientListBox.SetSelected(editedClientPosition, true);
             
 
         }

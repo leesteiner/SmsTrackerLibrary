@@ -34,6 +34,9 @@
             this.clientListBox = new System.Windows.Forms.ListBox();
             this.currentClientsLabel = new System.Windows.Forms.Label();
             this.viewSelectedClientButton = new System.Windows.Forms.Button();
+            this.viewSelectedSessionButton = new System.Windows.Forms.Button();
+            this.currentSessionsLabel = new System.Windows.Forms.Label();
+            this.sessionListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // CreateClientButton
@@ -56,7 +59,7 @@
             this.CreateSessionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateSessionButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateSessionButton.ForeColor = System.Drawing.Color.Black;
-            this.CreateSessionButton.Location = new System.Drawing.Point(650, 477);
+            this.CreateSessionButton.Location = new System.Drawing.Point(715, 117);
             this.CreateSessionButton.Name = "CreateSessionButton";
             this.CreateSessionButton.Size = new System.Drawing.Size(173, 50);
             this.CreateSessionButton.TabIndex = 12;
@@ -70,7 +73,7 @@
             this.SmsClientTrackerLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SmsClientTrackerLabel.Location = new System.Drawing.Point(148, 19);
             this.SmsClientTrackerLabel.Name = "SmsClientTrackerLabel";
-            this.SmsClientTrackerLabel.Size = new System.Drawing.Size(525, 45);
+            this.SmsClientTrackerLabel.Size = new System.Drawing.Size(530, 45);
             this.SmsClientTrackerLabel.TabIndex = 13;
             this.SmsClientTrackerLabel.Text = "Steiner Music Studios Client Tracker";
             // 
@@ -108,11 +111,47 @@
             this.viewSelectedClientButton.UseVisualStyleBackColor = false;
             this.viewSelectedClientButton.Click += new System.EventHandler(this.ViewSelectedClientButton_Click);
             // 
+            // viewSelectedSessionButton
+            // 
+            this.viewSelectedSessionButton.BackColor = System.Drawing.Color.White;
+            this.viewSelectedSessionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewSelectedSessionButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewSelectedSessionButton.ForeColor = System.Drawing.Color.Black;
+            this.viewSelectedSessionButton.Location = new System.Drawing.Point(512, 492);
+            this.viewSelectedSessionButton.Name = "viewSelectedSessionButton";
+            this.viewSelectedSessionButton.Size = new System.Drawing.Size(326, 40);
+            this.viewSelectedSessionButton.TabIndex = 19;
+            this.viewSelectedSessionButton.Text = "View Selected Session";
+            this.viewSelectedSessionButton.UseVisualStyleBackColor = false;
+            // 
+            // currentSessionsLabel
+            // 
+            this.currentSessionsLabel.AutoSize = true;
+            this.currentSessionsLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentSessionsLabel.Location = new System.Drawing.Point(512, 135);
+            this.currentSessionsLabel.Name = "currentSessionsLabel";
+            this.currentSessionsLabel.Size = new System.Drawing.Size(105, 32);
+            this.currentSessionsLabel.TabIndex = 18;
+            this.currentSessionsLabel.Text = "Sessions";
+            // 
+            // sessionListBox
+            // 
+            this.sessionListBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sessionListBox.FormattingEnabled = true;
+            this.sessionListBox.ItemHeight = 21;
+            this.sessionListBox.Location = new System.Drawing.Point(512, 188);
+            this.sessionListBox.Name = "sessionListBox";
+            this.sessionListBox.Size = new System.Drawing.Size(326, 298);
+            this.sessionListBox.TabIndex = 17;
+            // 
             // SmsTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 631);
+            this.Controls.Add(this.viewSelectedSessionButton);
+            this.Controls.Add(this.currentSessionsLabel);
+            this.Controls.Add(this.sessionListBox);
             this.Controls.Add(this.viewSelectedClientButton);
             this.Controls.Add(this.currentClientsLabel);
             this.Controls.Add(this.clientListBox);
@@ -134,6 +173,9 @@
         private System.Windows.Forms.ListBox clientListBox;
         private System.Windows.Forms.Label currentClientsLabel;
         private System.Windows.Forms.Button viewSelectedClientButton;
+        private System.Windows.Forms.Button viewSelectedSessionButton;
+        private System.Windows.Forms.Label currentSessionsLabel;
+        private System.Windows.Forms.ListBox sessionListBox;
     }
 }
 

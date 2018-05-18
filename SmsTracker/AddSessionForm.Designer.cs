@@ -70,6 +70,7 @@
             this.CreateSessionButton.TabIndex = 19;
             this.CreateSessionButton.Text = "Create Session";
             this.CreateSessionButton.UseVisualStyleBackColor = false;
+            this.CreateSessionButton.Click += new System.EventHandler(this.CreateSessionButton_Click);
             // 
             // RateTextBox
             // 
@@ -95,7 +96,7 @@
             this.SessionTypeLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SessionTypeLabel.Location = new System.Drawing.Point(54, 162);
             this.SessionTypeLabel.Name = "SessionTypeLabel";
-            this.SessionTypeLabel.Size = new System.Drawing.Size(173, 30);
+            this.SessionTypeLabel.Size = new System.Drawing.Size(174, 30);
             this.SessionTypeLabel.TabIndex = 15;
             this.SessionTypeLabel.Text = "Type of Session : ";
             // 
@@ -125,7 +126,7 @@
             this.PaymentReceivedLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PaymentReceivedLabel.Location = new System.Drawing.Point(54, 258);
             this.PaymentReceivedLabel.Name = "PaymentReceivedLabel";
-            this.PaymentReceivedLabel.Size = new System.Drawing.Size(192, 30);
+            this.PaymentReceivedLabel.Size = new System.Drawing.Size(194, 30);
             this.PaymentReceivedLabel.TabIndex = 20;
             this.PaymentReceivedLabel.Text = "Payment Received: ";
             // 
@@ -151,6 +152,7 @@
             // monthCalendar1
             // 
             this.monthCalendar1.Location = new System.Drawing.Point(814, 310);
+            this.monthCalendar1.MaxSelectionCount = 1;
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 24;
             // 
@@ -182,7 +184,7 @@
             this.YesRadioButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.YesRadioButton.Location = new System.Drawing.Point(70, 3);
             this.YesRadioButton.Name = "YesRadioButton";
-            this.YesRadioButton.Size = new System.Drawing.Size(61, 34);
+            this.YesRadioButton.Size = new System.Drawing.Size(63, 34);
             this.YesRadioButton.TabIndex = 0;
             this.YesRadioButton.TabStop = true;
             this.YesRadioButton.Text = "Yes";

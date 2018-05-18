@@ -13,6 +13,7 @@ namespace SmsTrackerLibrary.Models
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
         public string CellphoneNumber { get; set; }
+        public List<int> SessionIds { get; set; } = new List<int>();
         public string FullName
         {
             get
@@ -25,14 +26,16 @@ namespace SmsTrackerLibrary.Models
         {
 
         }
+        //TODO: Constructor chains??
 
-        public Client(string firstName, string lastName, string emailAddress, string cellphoneNumber)
+        public Client(string firstName, string lastName, string emailAddress, string cellphoneNumber, List<int> sessionIds)
         {
             //TODO: Add validation
             FirstName = firstName;
             LastName = lastName;
             EmailAddress = emailAddress;
             CellphoneNumber = cellphoneNumber;
+            SessionIds = sessionIds;
         }
     }
 }
