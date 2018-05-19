@@ -1,4 +1,5 @@
-﻿using SmsTrackerLibrary.Models;
+﻿using SmsTrackerLibrary.DataAccess;
+using SmsTrackerLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,8 @@ namespace SmsTracker
     {
         public Client returnClient { get; set; }
 
+        private List<Session> allSessions { get; set; } = GlobalConfig.Connection.GetAllSessions();
+
         public ViewClientForm(Client c)
         {
             InitializeComponent();
@@ -23,6 +26,7 @@ namespace SmsTracker
             emailAddressTextBox.Text = c.EmailAddress;
             cellPhoneNumberTextBox.Text = c.CellphoneNumber;
             returnClient = c;
+            WireUpLists();
         }
 
         private void UpdateClientButton_Click(object sender, EventArgs e)
@@ -42,6 +46,31 @@ namespace SmsTracker
             this.Close();
 
             
+        }
+
+        private void WireUpLists()
+        {
+            allSessions = GlobalConfig.Connection.GetAllSessions();
+            List<Session> currentClientSessions = new List<Session>();
+
+            foreach (Session s in allSessions)
+            {
+                if (s.client.Id == returnClient.Id)
+                {
+                    currentClientSessions.Add(s);
+                }
+            }
+
+
+            sessionListBox.DataSource = null;
+            sessionListBox.DataSource = currentClientSessions;
+            sessionListBox.DisplayMember = "basicSummary";
+
+        }
+
+        private void ViewClientForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.returnClient = returnClient;
         }
     }
 }

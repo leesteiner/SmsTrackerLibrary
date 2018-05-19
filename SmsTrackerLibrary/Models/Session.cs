@@ -20,7 +20,7 @@ namespace SmsTrackerLibrary.Models
         {
             get
             {
-                return $"{Time} - {client.FullName}";
+                return $"{Time.ToShortDateString()} - {client.FullName}";
             }
         }
 

@@ -74,25 +74,39 @@ namespace SmsTracker
         {
 
             Client tempClient = (Client)clientListBox.SelectedItem;
-            using (var v = new ViewClientForm(tempClient))
+            
+            if (tempClient != null)
             {
-                var result = v.ShowDialog();
-                if (result == DialogResult.OK)
+                using (var v = new ViewClientForm(tempClient))
                 {
-                    returnClient = v.returnClient;
-                    v.FormClosing += new FormClosingEventHandler(this.V_FormClosing);
+                    var result = v.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        returnClient = v.returnClient;
+                        v.FormClosing += new FormClosingEventHandler(this.V_FormClosing);
+                    }
+                    if (result == DialogResult.Cancel)
+                    {
+                        returnClient = tempClient;
+                    }
+
                 }
 
+                int editedClientPosition = Clients.IndexOf(tempClient);
+                Clients.Insert(editedClientPosition, returnClient);
+
+                Clients.Remove(tempClient);
+
+                TextConnectorProcessor.SaveToClientFile(Clients, TextConnection.ClientFile);
+                WireUpLists();
+                clientListBox.SetSelected(editedClientPosition, true);
             }
 
-            int editedClientPosition = Clients.IndexOf(tempClient);
-            Clients.Insert(editedClientPosition, returnClient);
-
-            Clients.Remove(tempClient);
+            else
+            {
+                MessageBox.Show("There are no clients available to view.");
+            }
             
-            TextConnectorProcessor.SaveToClientFile(Clients, TextConnection.ClientFile);
-            WireUpLists();
-            clientListBox.SetSelected(editedClientPosition, true);
 
             //TODO: Fix error of x'ing out of add client box. Changes record to NULL in JSON? - or replaces model with last edited one??
             
@@ -102,6 +116,41 @@ namespace SmsTracker
         private void V_FormClosing(object sender, FormClosingEventArgs e)
         {
             WireUpLists();
+        }
+
+        private void deleteSelectedClientButton_Click(object sender, EventArgs e)
+        {
+
+            Client selectedClient = (Client)clientListBox.SelectedItem;
+            if (selectedClient != null)
+            {
+                Clients.Remove(selectedClient);
+                TextConnectorProcessor.SaveToClientFile(Clients, TextConnection.ClientFile);
+                WireUpLists();
+            }
+
+            else
+            {
+                MessageBox.Show("There are no clients to delete.");
+            }
+            
+        }
+
+        private void deleteSelectedSessionButton_Click(object sender, EventArgs e)
+        {
+            Session selectedSession = (Session)sessionListBox.SelectedItem;
+            if (selectedSession != null)
+            {
+                Sessions.Remove(selectedSession);
+                TextConnectorProcessor.SaveToSessionFile(Sessions, TextConnection.SessionFile);
+                WireUpLists();
+            }
+
+            else
+            {
+                MessageBox.Show("There are no clients to delete.");
+            }
+
         }
     }
 }

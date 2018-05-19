@@ -59,7 +59,7 @@ namespace SmsTracker
         {
             
             WireUpLists();
-            //todo: set selected client as the one just added
+            //todo: set selected client as the one just added, copy code from View Client form, updated to fix based on dialogresult
 
         }
 
@@ -80,17 +80,22 @@ namespace SmsTracker
                     isChecked, 
                     NotesTextBox.Text);
 
-                GlobalConfig.Connection.CreateSession(model);
-                Client newlyIdedClient = Clients.Find(x => x.FullName == $"{model.client.FullName}");
-                selectedClient.SessionIds.Add(newlyIdedClient.Id);
+                Session newlyIdedSession = GlobalConfig.Connection.CreateSession(model);
 
-                //TextConnectorProcessor.SaveToClientFile(Clients, TextConnection.SessionFile);
-                //TODO: Save updated client.
+                Client clientToWhomIdsWillBeAdded = Clients.Find(x => x.FullName == $"{newlyIdedSession.client.FullName}");
+                clientToWhomIdsWillBeAdded.SessionIds.Add(newlyIdedSession.Id);
+                Clients.Insert(selectedClient.Id, clientToWhomIdsWillBeAdded);
+                Clients.Remove(selectedClient);
+
                 this.Close();
 
-                //TODO: Add this.sessionID to client list of sessions Ids
+                
                 //TODO: Validate, validate, validate
-                //TODO: Change date format
+                //TODO: Refactor form names from Pascal to camelCase
+                //TODO: add view session form
+                //TODO: background / button colors
+
+            
 
 
             }

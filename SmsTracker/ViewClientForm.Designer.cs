@@ -38,6 +38,8 @@
             this.lastNameLabel = new System.Windows.Forms.Label();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.firstNameLabel = new System.Windows.Forms.Label();
+            this.sessionsLabel = new System.Windows.Forms.Label();
+            this.sessionListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // AddSessionLabel
@@ -136,11 +138,33 @@
             this.firstNameLabel.TabIndex = 15;
             this.firstNameLabel.Text = "First Name : ";
             // 
+            // sessionsLabel
+            // 
+            this.sessionsLabel.AutoSize = true;
+            this.sessionsLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sessionsLabel.Location = new System.Drawing.Point(724, 75);
+            this.sessionsLabel.Name = "sessionsLabel";
+            this.sessionsLabel.Size = new System.Drawing.Size(105, 32);
+            this.sessionsLabel.TabIndex = 25;
+            this.sessionsLabel.Text = "Sessions";
+            // 
+            // sessionListBox
+            // 
+            this.sessionListBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sessionListBox.FormattingEnabled = true;
+            this.sessionListBox.ItemHeight = 21;
+            this.sessionListBox.Location = new System.Drawing.Point(622, 121);
+            this.sessionListBox.Name = "sessionListBox";
+            this.sessionListBox.Size = new System.Drawing.Size(326, 214);
+            this.sessionListBox.TabIndex = 24;
+            // 
             // ViewClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 450);
+            this.ClientSize = new System.Drawing.Size(1110, 450);
+            this.Controls.Add(this.sessionsLabel);
+            this.Controls.Add(this.sessionListBox);
             this.Controls.Add(this.UpdateClientButton);
             this.Controls.Add(this.cellPhoneNumberTextBox);
             this.Controls.Add(this.cellPhoneNumberLabel);
@@ -153,6 +177,7 @@
             this.Controls.Add(this.AddSessionLabel);
             this.Name = "ViewClientForm";
             this.Text = "ViewClientForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ViewClientForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,5 +195,7 @@
         private System.Windows.Forms.Label lastNameLabel;
         private System.Windows.Forms.TextBox firstNameTextBox;
         private System.Windows.Forms.Label firstNameLabel;
+        private System.Windows.Forms.Label sessionsLabel;
+        private System.Windows.Forms.ListBox sessionListBox;
     }
 }

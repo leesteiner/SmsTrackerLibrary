@@ -37,6 +37,8 @@
             this.viewSelectedSessionButton = new System.Windows.Forms.Button();
             this.currentSessionsLabel = new System.Windows.Forms.Label();
             this.sessionListBox = new System.Windows.Forms.ListBox();
+            this.deleteSelectedClientButton = new System.Windows.Forms.Button();
+            this.deleteSelectedSessionButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateClientButton
@@ -73,7 +75,7 @@
             this.SmsClientTrackerLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SmsClientTrackerLabel.Location = new System.Drawing.Point(148, 19);
             this.SmsClientTrackerLabel.Name = "SmsClientTrackerLabel";
-            this.SmsClientTrackerLabel.Size = new System.Drawing.Size(530, 45);
+            this.SmsClientTrackerLabel.Size = new System.Drawing.Size(525, 45);
             this.SmsClientTrackerLabel.TabIndex = 13;
             this.SmsClientTrackerLabel.Text = "Steiner Music Studios Client Tracker";
             // 
@@ -144,11 +146,41 @@
             this.sessionListBox.Size = new System.Drawing.Size(326, 298);
             this.sessionListBox.TabIndex = 17;
             // 
+            // deleteSelectedClientButton
+            // 
+            this.deleteSelectedClientButton.BackColor = System.Drawing.Color.White;
+            this.deleteSelectedClientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteSelectedClientButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteSelectedClientButton.ForeColor = System.Drawing.Color.Black;
+            this.deleteSelectedClientButton.Location = new System.Drawing.Point(12, 568);
+            this.deleteSelectedClientButton.Name = "deleteSelectedClientButton";
+            this.deleteSelectedClientButton.Size = new System.Drawing.Size(147, 30);
+            this.deleteSelectedClientButton.TabIndex = 20;
+            this.deleteSelectedClientButton.Text = "Delete Selected Client";
+            this.deleteSelectedClientButton.UseVisualStyleBackColor = false;
+            this.deleteSelectedClientButton.Click += new System.EventHandler(this.deleteSelectedClientButton_Click);
+            // 
+            // deleteSelectedSessionButton
+            // 
+            this.deleteSelectedSessionButton.BackColor = System.Drawing.Color.White;
+            this.deleteSelectedSessionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteSelectedSessionButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteSelectedSessionButton.ForeColor = System.Drawing.Color.Black;
+            this.deleteSelectedSessionButton.Location = new System.Drawing.Point(512, 568);
+            this.deleteSelectedSessionButton.Name = "deleteSelectedSessionButton";
+            this.deleteSelectedSessionButton.Size = new System.Drawing.Size(161, 30);
+            this.deleteSelectedSessionButton.TabIndex = 21;
+            this.deleteSelectedSessionButton.Text = "Delete Selected Session";
+            this.deleteSelectedSessionButton.UseVisualStyleBackColor = false;
+            this.deleteSelectedSessionButton.Click += new System.EventHandler(this.deleteSelectedSessionButton_Click);
+            // 
             // SmsTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 631);
+            this.Controls.Add(this.deleteSelectedSessionButton);
+            this.Controls.Add(this.deleteSelectedClientButton);
             this.Controls.Add(this.viewSelectedSessionButton);
             this.Controls.Add(this.currentSessionsLabel);
             this.Controls.Add(this.sessionListBox);
@@ -176,6 +208,8 @@
         private System.Windows.Forms.Button viewSelectedSessionButton;
         private System.Windows.Forms.Label currentSessionsLabel;
         private System.Windows.Forms.ListBox sessionListBox;
+        private System.Windows.Forms.Button deleteSelectedClientButton;
+        private System.Windows.Forms.Button deleteSelectedSessionButton;
     }
 }
 

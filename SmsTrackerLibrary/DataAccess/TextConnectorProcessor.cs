@@ -7,6 +7,7 @@ using System.Configuration;
 using System.IO;
 using SmsTrackerLibrary.Models;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 
 namespace SmsTrackerLibrary.DataAccess
@@ -48,10 +49,21 @@ namespace SmsTrackerLibrary.DataAccess
         public static List<Client> ConvertToClient(this List<string> lines)
         {
             List<Client> output = new List<Client>();
-            foreach (string line in lines)
+
+            foreach (string line in lines.ToList())
             {
-                Client c = JsonConvert.DeserializeObject<Client>(line);
-                output.Add(c);
+                if (line == "null")
+                {
+                    lines.Remove(line);
+                    Debug.WriteLine("Null line removed, data possibly corrupted!");
+                }
+
+                else
+                {
+                    Client c = JsonConvert.DeserializeObject<Client>(line);
+                    output.Add(c);
+                }
+                
             }
 
             return output;
@@ -92,10 +104,21 @@ namespace SmsTrackerLibrary.DataAccess
         public static void SaveToClientFile(this List<Client> models, string fileName)
         {
             List<string> lines = new List<string>();
-            foreach (Client c in models)
+            foreach (Client c in models.ToList())
             {
-                string json = JsonConvert.SerializeObject(c);
-                lines.Add(json);
+                if (c == null)
+                {
+                    models.Remove(c);
+                    Debug.WriteLine("Null line removed, data possibly corrupted!");
+                }
+
+                else
+                {
+                    string json = JsonConvert.SerializeObject(c);
+                    lines.Add(json);
+                }
+
+                
             }
 
 

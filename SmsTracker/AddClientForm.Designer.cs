@@ -154,7 +154,6 @@
             this.Controls.Add(this.AddClientLabel);
             this.Name = "AddClientForm";
             this.Text = "Add Client";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddClientForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

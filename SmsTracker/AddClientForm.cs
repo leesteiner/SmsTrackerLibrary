@@ -49,12 +49,19 @@ namespace SmsTracker
         private bool ValidateForm()
         {
             bool output = true;
+
+            int cellphoneCheck = 0;
+            int.TryParse(CellphoneNumberTextBox.Text, out cellphoneCheck);
+            if (cellphoneCheck == 0)
+            {
+                MessageBox.Show("You've entered an invalid cellphone number, please try again.");
+                output = false;
+                
+            }
+            
             return output;
         }
+        //TODO: still... fix null returned Client from CreateClient X'ed out
 
-        private void AddClientForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-        }
     }
 }
