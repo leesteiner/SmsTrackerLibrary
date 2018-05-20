@@ -30,7 +30,7 @@ namespace SmsTrackerLibrary.Models
 
         public Client(string firstName, string lastName, string emailAddress, string cellphoneNumber, List<int> sessionIds)
         {
-            //TODO: Add validation
+            
             FirstName = firstName;
             LastName = lastName;
             EmailAddress = emailAddress;

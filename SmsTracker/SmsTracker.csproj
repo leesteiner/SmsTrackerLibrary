@@ -74,6 +74,12 @@
     <Compile Include="ViewClientForm.Designer.cs">
       <DependentUpon>ViewClientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewSessionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewSessionForm.Designer.cs">
+      <DependentUpon>ViewSessionForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddClientForm.resx">
       <DependentUpon>AddClientForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,12 +94,16 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SmsTracker.resx">
       <DependentUpon>SmsTracker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewClientForm.resx">
       <DependentUpon>ViewClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSessionForm.resx">
+      <DependentUpon>ViewSessionForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -116,6 +126,9 @@
       <Project>{95fb8ffd-0d1c-4bf6-9a90-2144914dde82}</Project>
       <Name>SmsTrackerLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steiner_Horizontal_Blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,6 @@
 ﻿namespace SmsTracker
 {
-    partial class AddSessionForm
+    partial class addSessionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,225 +28,267 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AddSessionLabel = new System.Windows.Forms.Label();
-            this.CreateSessionButton = new System.Windows.Forms.Button();
-            this.RateTextBox = new System.Windows.Forms.TextBox();
-            this.RateLabel = new System.Windows.Forms.Label();
-            this.SessionTypeLabel = new System.Windows.Forms.Label();
-            this.DateLabel = new System.Windows.Forms.Label();
-            this.ClientLabel = new System.Windows.Forms.Label();
-            this.PaymentReceivedLabel = new System.Windows.Forms.Label();
-            this.NotesTextBox = new System.Windows.Forms.TextBox();
-            this.NotesLabel = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.PaymentReceivedPanel = new System.Windows.Forms.Panel();
-            this.NoRadioButton = new System.Windows.Forms.RadioButton();
-            this.YesRadioButton = new System.Windows.Forms.RadioButton();
-            this.SessionTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.ClientComboBox = new System.Windows.Forms.ComboBox();
-            this.NewClientButton = new System.Windows.Forms.Button();
-            this.PaymentReceivedPanel.SuspendLayout();
+            this.addSessionLabel = new System.Windows.Forms.Label();
+            this.createSessionButton = new System.Windows.Forms.Button();
+            this.rateTextBox = new System.Windows.Forms.TextBox();
+            this.rateLabel = new System.Windows.Forms.Label();
+            this.sessionTypeLabel = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.clientLabel = new System.Windows.Forms.Label();
+            this.paymentReceivedLabel = new System.Windows.Forms.Label();
+            this.notesTextBox = new System.Windows.Forms.TextBox();
+            this.notesLabel = new System.Windows.Forms.Label();
+            this.paymentReceivedPanel = new System.Windows.Forms.Panel();
+            this.noRadioButton = new System.Windows.Forms.RadioButton();
+            this.yesRadioButton = new System.Windows.Forms.RadioButton();
+            this.sessionTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.clientComboBox = new System.Windows.Forms.ComboBox();
+            this.newClientButton = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.paymentReceivedPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // AddSessionLabel
+            // addSessionLabel
             // 
-            this.AddSessionLabel.AutoSize = true;
-            this.AddSessionLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddSessionLabel.Location = new System.Drawing.Point(375, 39);
-            this.AddSessionLabel.Name = "AddSessionLabel";
-            this.AddSessionLabel.Size = new System.Drawing.Size(195, 45);
-            this.AddSessionLabel.TabIndex = 1;
-            this.AddSessionLabel.Text = "Add Session";
+            this.addSessionLabel.AutoSize = true;
+            this.addSessionLabel.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addSessionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(74)))), ((int)(((byte)(128)))));
+            this.addSessionLabel.Location = new System.Drawing.Point(139, 9);
+            this.addSessionLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.addSessionLabel.Name = "addSessionLabel";
+            this.addSessionLabel.Size = new System.Drawing.Size(286, 65);
+            this.addSessionLabel.TabIndex = 1;
+            this.addSessionLabel.Text = "Add Session";
             // 
-            // CreateSessionButton
+            // createSessionButton
             // 
-            this.CreateSessionButton.BackColor = System.Drawing.Color.White;
-            this.CreateSessionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CreateSessionButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateSessionButton.ForeColor = System.Drawing.Color.Black;
-            this.CreateSessionButton.Location = new System.Drawing.Point(386, 518);
-            this.CreateSessionButton.Name = "CreateSessionButton";
-            this.CreateSessionButton.Size = new System.Drawing.Size(173, 50);
-            this.CreateSessionButton.TabIndex = 19;
-            this.CreateSessionButton.Text = "Create Session";
-            this.CreateSessionButton.UseVisualStyleBackColor = false;
-            this.CreateSessionButton.Click += new System.EventHandler(this.CreateSessionButton_Click);
+            this.createSessionButton.BackColor = System.Drawing.Color.White;
+            this.createSessionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createSessionButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createSessionButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(74)))), ((int)(((byte)(128)))));
+            this.createSessionButton.Location = new System.Drawing.Point(164, 461);
+            this.createSessionButton.Margin = new System.Windows.Forms.Padding(6);
+            this.createSessionButton.Name = "createSessionButton";
+            this.createSessionButton.Size = new System.Drawing.Size(232, 40);
+            this.createSessionButton.TabIndex = 19;
+            this.createSessionButton.Text = "Create Session";
+            this.createSessionButton.UseVisualStyleBackColor = false;
+            this.createSessionButton.Click += new System.EventHandler(this.CreateSessionButton_Click);
             // 
-            // RateTextBox
+            // rateTextBox
             // 
-            this.RateTextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RateTextBox.Location = new System.Drawing.Point(261, 208);
-            this.RateTextBox.Name = "RateTextBox";
-            this.RateTextBox.Size = new System.Drawing.Size(297, 35);
-            this.RateTextBox.TabIndex = 18;
+            this.rateTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rateTextBox.Location = new System.Drawing.Point(213, 233);
+            this.rateTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.rateTextBox.Name = "rateTextBox";
+            this.rateTextBox.Size = new System.Drawing.Size(317, 33);
+            this.rateTextBox.TabIndex = 18;
             // 
-            // RateLabel
+            // rateLabel
             // 
-            this.RateLabel.AutoSize = true;
-            this.RateLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RateLabel.Location = new System.Drawing.Point(54, 211);
-            this.RateLabel.Name = "RateLabel";
-            this.RateLabel.Size = new System.Drawing.Size(72, 30);
-            this.RateLabel.TabIndex = 17;
-            this.RateLabel.Text = "Rate : ";
+            this.rateLabel.AutoSize = true;
+            this.rateLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(74)))), ((int)(((byte)(128)))));
+            this.rateLabel.Location = new System.Drawing.Point(28, 236);
+            this.rateLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.rateLabel.Name = "rateLabel";
+            this.rateLabel.Size = new System.Drawing.Size(63, 25);
+            this.rateLabel.TabIndex = 17;
+            this.rateLabel.Text = "Rate : ";
             // 
-            // SessionTypeLabel
+            // sessionTypeLabel
             // 
-            this.SessionTypeLabel.AutoSize = true;
-            this.SessionTypeLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SessionTypeLabel.Location = new System.Drawing.Point(54, 162);
-            this.SessionTypeLabel.Name = "SessionTypeLabel";
-            this.SessionTypeLabel.Size = new System.Drawing.Size(174, 30);
-            this.SessionTypeLabel.TabIndex = 15;
-            this.SessionTypeLabel.Text = "Type of Session : ";
+            this.sessionTypeLabel.AutoSize = true;
+            this.sessionTypeLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sessionTypeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(74)))), ((int)(((byte)(128)))));
+            this.sessionTypeLabel.Location = new System.Drawing.Point(26, 191);
+            this.sessionTypeLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.sessionTypeLabel.Name = "sessionTypeLabel";
+            this.sessionTypeLabel.Size = new System.Drawing.Size(155, 25);
+            this.sessionTypeLabel.TabIndex = 15;
+            this.sessionTypeLabel.Text = "Type of Session : ";
             // 
-            // DateLabel
+            // dateLabel
             // 
-            this.DateLabel.AutoSize = true;
-            this.DateLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateLabel.Location = new System.Drawing.Point(888, 271);
-            this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(68, 30);
-            this.DateLabel.TabIndex = 13;
-            this.DateLabel.Text = "Date: ";
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(74)))), ((int)(((byte)(128)))));
+            this.dateLabel.Location = new System.Drawing.Point(26, 149);
+            this.dateLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(60, 25);
+            this.dateLabel.TabIndex = 13;
+            this.dateLabel.Text = "Date: ";
             // 
-            // ClientLabel
+            // clientLabel
             // 
-            this.ClientLabel.AutoSize = true;
-            this.ClientLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientLabel.Location = new System.Drawing.Point(54, 114);
-            this.ClientLabel.Name = "ClientLabel";
-            this.ClientLabel.Size = new System.Drawing.Size(83, 30);
-            this.ClientLabel.TabIndex = 11;
-            this.ClientLabel.Text = "Client : ";
+            this.clientLabel.AutoSize = true;
+            this.clientLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(74)))), ((int)(((byte)(128)))));
+            this.clientLabel.Location = new System.Drawing.Point(26, 101);
+            this.clientLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.clientLabel.Name = "clientLabel";
+            this.clientLabel.Size = new System.Drawing.Size(75, 25);
+            this.clientLabel.TabIndex = 11;
+            this.clientLabel.Text = "Client : ";
             // 
-            // PaymentReceivedLabel
+            // paymentReceivedLabel
             // 
-            this.PaymentReceivedLabel.AutoSize = true;
-            this.PaymentReceivedLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PaymentReceivedLabel.Location = new System.Drawing.Point(54, 258);
-            this.PaymentReceivedLabel.Name = "PaymentReceivedLabel";
-            this.PaymentReceivedLabel.Size = new System.Drawing.Size(194, 30);
-            this.PaymentReceivedLabel.TabIndex = 20;
-            this.PaymentReceivedLabel.Text = "Payment Received: ";
+            this.paymentReceivedLabel.AutoSize = true;
+            this.paymentReceivedLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentReceivedLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(74)))), ((int)(((byte)(128)))));
+            this.paymentReceivedLabel.Location = new System.Drawing.Point(28, 288);
+            this.paymentReceivedLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.paymentReceivedLabel.Name = "paymentReceivedLabel";
+            this.paymentReceivedLabel.Size = new System.Drawing.Size(172, 25);
+            this.paymentReceivedLabel.TabIndex = 20;
+            this.paymentReceivedLabel.Text = "Payment Received: ";
             // 
-            // NotesTextBox
+            // notesTextBox
             // 
-            this.NotesTextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NotesTextBox.Location = new System.Drawing.Point(261, 310);
-            this.NotesTextBox.Multiline = true;
-            this.NotesTextBox.Name = "NotesTextBox";
-            this.NotesTextBox.Size = new System.Drawing.Size(297, 171);
-            this.NotesTextBox.TabIndex = 23;
+            this.notesTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notesTextBox.Location = new System.Drawing.Point(213, 336);
+            this.notesTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.notesTextBox.Multiline = true;
+            this.notesTextBox.Name = "notesTextBox";
+            this.notesTextBox.Size = new System.Drawing.Size(317, 93);
+            this.notesTextBox.TabIndex = 23;
             // 
-            // NotesLabel
+            // notesLabel
             // 
-            this.NotesLabel.AutoSize = true;
-            this.NotesLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NotesLabel.Location = new System.Drawing.Point(54, 313);
-            this.NotesLabel.Name = "NotesLabel";
-            this.NotesLabel.Size = new System.Drawing.Size(85, 30);
-            this.NotesLabel.TabIndex = 22;
-            this.NotesLabel.Text = "Notes : ";
+            this.notesLabel.AutoSize = true;
+            this.notesLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notesLabel.Location = new System.Drawing.Point(28, 339);
+            this.notesLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.notesLabel.Name = "notesLabel";
+            this.notesLabel.Size = new System.Drawing.Size(75, 25);
+            this.notesLabel.TabIndex = 22;
+            this.notesLabel.Text = "Notes : ";
             // 
-            // monthCalendar1
+            // paymentReceivedPanel
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(814, 310);
-            this.monthCalendar1.MaxSelectionCount = 1;
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 24;
+            this.paymentReceivedPanel.Controls.Add(this.noRadioButton);
+            this.paymentReceivedPanel.Controls.Add(this.yesRadioButton);
+            this.paymentReceivedPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentReceivedPanel.Location = new System.Drawing.Point(213, 278);
+            this.paymentReceivedPanel.Margin = new System.Windows.Forms.Padding(6);
+            this.paymentReceivedPanel.Name = "paymentReceivedPanel";
+            this.paymentReceivedPanel.Size = new System.Drawing.Size(152, 46);
+            this.paymentReceivedPanel.TabIndex = 25;
             // 
-            // PaymentReceivedPanel
+            // noRadioButton
             // 
-            this.PaymentReceivedPanel.Controls.Add(this.NoRadioButton);
-            this.PaymentReceivedPanel.Controls.Add(this.YesRadioButton);
-            this.PaymentReceivedPanel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PaymentReceivedPanel.Location = new System.Drawing.Point(261, 252);
-            this.PaymentReceivedPanel.Name = "PaymentReceivedPanel";
-            this.PaymentReceivedPanel.Size = new System.Drawing.Size(297, 42);
-            this.PaymentReceivedPanel.TabIndex = 25;
+            this.noRadioButton.AutoSize = true;
+            this.noRadioButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noRadioButton.Location = new System.Drawing.Point(75, 8);
+            this.noRadioButton.Margin = new System.Windows.Forms.Padding(6);
+            this.noRadioButton.Name = "noRadioButton";
+            this.noRadioButton.Size = new System.Drawing.Size(55, 29);
+            this.noRadioButton.TabIndex = 1;
+            this.noRadioButton.TabStop = true;
+            this.noRadioButton.Text = "No";
+            this.noRadioButton.UseVisualStyleBackColor = true;
             // 
-            // NoRadioButton
+            // yesRadioButton
             // 
-            this.NoRadioButton.AutoSize = true;
-            this.NoRadioButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoRadioButton.Location = new System.Drawing.Point(170, 3);
-            this.NoRadioButton.Name = "NoRadioButton";
-            this.NoRadioButton.Size = new System.Drawing.Size(59, 34);
-            this.NoRadioButton.TabIndex = 1;
-            this.NoRadioButton.TabStop = true;
-            this.NoRadioButton.Text = "No";
-            this.NoRadioButton.UseVisualStyleBackColor = true;
+            this.yesRadioButton.AutoSize = true;
+            this.yesRadioButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yesRadioButton.Location = new System.Drawing.Point(6, 8);
+            this.yesRadioButton.Margin = new System.Windows.Forms.Padding(6);
+            this.yesRadioButton.Name = "yesRadioButton";
+            this.yesRadioButton.Size = new System.Drawing.Size(57, 29);
+            this.yesRadioButton.TabIndex = 0;
+            this.yesRadioButton.TabStop = true;
+            this.yesRadioButton.Text = "Yes";
+            this.yesRadioButton.UseVisualStyleBackColor = true;
             // 
-            // YesRadioButton
+            // sessionTypeComboBox
             // 
-            this.YesRadioButton.AutoSize = true;
-            this.YesRadioButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.YesRadioButton.Location = new System.Drawing.Point(70, 3);
-            this.YesRadioButton.Name = "YesRadioButton";
-            this.YesRadioButton.Size = new System.Drawing.Size(63, 34);
-            this.YesRadioButton.TabIndex = 0;
-            this.YesRadioButton.TabStop = true;
-            this.YesRadioButton.Text = "Yes";
-            this.YesRadioButton.UseVisualStyleBackColor = true;
+            this.sessionTypeComboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sessionTypeComboBox.FormattingEnabled = true;
+            this.sessionTypeComboBox.Location = new System.Drawing.Point(213, 188);
+            this.sessionTypeComboBox.Margin = new System.Windows.Forms.Padding(6);
+            this.sessionTypeComboBox.Name = "sessionTypeComboBox";
+            this.sessionTypeComboBox.Size = new System.Drawing.Size(317, 33);
+            this.sessionTypeComboBox.TabIndex = 26;
             // 
-            // SessionTypeComboBox
+            // clientComboBox
             // 
-            this.SessionTypeComboBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SessionTypeComboBox.FormattingEnabled = true;
-            this.SessionTypeComboBox.Location = new System.Drawing.Point(261, 159);
-            this.SessionTypeComboBox.Name = "SessionTypeComboBox";
-            this.SessionTypeComboBox.Size = new System.Drawing.Size(297, 38);
-            this.SessionTypeComboBox.TabIndex = 26;
+            this.clientComboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientComboBox.FormattingEnabled = true;
+            this.clientComboBox.Location = new System.Drawing.Point(113, 98);
+            this.clientComboBox.Margin = new System.Windows.Forms.Padding(6);
+            this.clientComboBox.Name = "clientComboBox";
+            this.clientComboBox.Size = new System.Drawing.Size(295, 33);
+            this.clientComboBox.TabIndex = 27;
             // 
-            // ClientComboBox
+            // newClientButton
             // 
-            this.ClientComboBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientComboBox.FormattingEnabled = true;
-            this.ClientComboBox.Location = new System.Drawing.Point(261, 111);
-            this.ClientComboBox.Name = "ClientComboBox";
-            this.ClientComboBox.Size = new System.Drawing.Size(298, 38);
-            this.ClientComboBox.TabIndex = 27;
+            this.newClientButton.BackColor = System.Drawing.Color.White;
+            this.newClientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newClientButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newClientButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(74)))), ((int)(((byte)(128)))));
+            this.newClientButton.Location = new System.Drawing.Point(420, 98);
+            this.newClientButton.Margin = new System.Windows.Forms.Padding(6);
+            this.newClientButton.Name = "newClientButton";
+            this.newClientButton.Size = new System.Drawing.Size(110, 33);
+            this.newClientButton.TabIndex = 28;
+            this.newClientButton.Text = "Add Client";
+            this.newClientButton.UseVisualStyleBackColor = false;
+            this.newClientButton.Click += new System.EventHandler(this.NewClientButton_Click);
             // 
-            // NewClientButton
+            // dateTimePicker1
             // 
-            this.NewClientButton.BackColor = System.Drawing.Color.White;
-            this.NewClientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NewClientButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewClientButton.ForeColor = System.Drawing.Color.Black;
-            this.NewClientButton.Location = new System.Drawing.Point(621, 111);
-            this.NewClientButton.Name = "NewClientButton";
-            this.NewClientButton.Size = new System.Drawing.Size(173, 38);
-            this.NewClientButton.TabIndex = 28;
-            this.NewClientButton.Text = "Add Client";
-            this.NewClientButton.UseVisualStyleBackColor = false;
-            this.NewClientButton.Click += new System.EventHandler(this.NewClientButton_Click);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(213, 143);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(6);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(317, 33);
+            this.dateTimePicker1.TabIndex = 29;
             // 
-            // AddSessionForm
+            // label1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(188, 236);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(22, 25);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "$";
+            // 
+            // addSessionForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1204, 629);
-            this.Controls.Add(this.NewClientButton);
-            this.Controls.Add(this.ClientComboBox);
-            this.Controls.Add(this.SessionTypeComboBox);
-            this.Controls.Add(this.PaymentReceivedPanel);
-            this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.NotesTextBox);
-            this.Controls.Add(this.NotesLabel);
-            this.Controls.Add(this.PaymentReceivedLabel);
-            this.Controls.Add(this.CreateSessionButton);
-            this.Controls.Add(this.RateTextBox);
-            this.Controls.Add(this.RateLabel);
-            this.Controls.Add(this.SessionTypeLabel);
-            this.Controls.Add(this.DateLabel);
-            this.Controls.Add(this.ClientLabel);
-            this.Controls.Add(this.AddSessionLabel);
-            this.Name = "AddSessionForm";
+            this.ClientSize = new System.Drawing.Size(560, 543);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.newClientButton);
+            this.Controls.Add(this.clientComboBox);
+            this.Controls.Add(this.sessionTypeComboBox);
+            this.Controls.Add(this.paymentReceivedPanel);
+            this.Controls.Add(this.notesTextBox);
+            this.Controls.Add(this.notesLabel);
+            this.Controls.Add(this.paymentReceivedLabel);
+            this.Controls.Add(this.createSessionButton);
+            this.Controls.Add(this.rateTextBox);
+            this.Controls.Add(this.rateLabel);
+            this.Controls.Add(this.sessionTypeLabel);
+            this.Controls.Add(this.dateLabel);
+            this.Controls.Add(this.clientLabel);
+            this.Controls.Add(this.addSessionLabel);
+            this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(74)))), ((int)(((byte)(128)))));
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Name = "addSessionForm";
             this.Text = "Add Session";
-            this.PaymentReceivedPanel.ResumeLayout(false);
-            this.PaymentReceivedPanel.PerformLayout();
+            this.paymentReceivedPanel.ResumeLayout(false);
+            this.paymentReceivedPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,22 +296,23 @@
 
         #endregion
 
-        private System.Windows.Forms.Label AddSessionLabel;
-        private System.Windows.Forms.Button CreateSessionButton;
-        private System.Windows.Forms.TextBox RateTextBox;
-        private System.Windows.Forms.Label RateLabel;
-        private System.Windows.Forms.Label SessionTypeLabel;
-        private System.Windows.Forms.Label DateLabel;
-        private System.Windows.Forms.Label ClientLabel;
-        private System.Windows.Forms.Label PaymentReceivedLabel;
-        private System.Windows.Forms.TextBox NotesTextBox;
-        private System.Windows.Forms.Label NotesLabel;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Panel PaymentReceivedPanel;
-        private System.Windows.Forms.RadioButton NoRadioButton;
-        private System.Windows.Forms.RadioButton YesRadioButton;
-        private System.Windows.Forms.ComboBox SessionTypeComboBox;
-        private System.Windows.Forms.ComboBox ClientComboBox;
-        private System.Windows.Forms.Button NewClientButton;
+        private System.Windows.Forms.Label addSessionLabel;
+        private System.Windows.Forms.Button createSessionButton;
+        private System.Windows.Forms.TextBox rateTextBox;
+        private System.Windows.Forms.Label rateLabel;
+        private System.Windows.Forms.Label sessionTypeLabel;
+        private System.Windows.Forms.Label dateLabel;
+        private System.Windows.Forms.Label clientLabel;
+        private System.Windows.Forms.Label paymentReceivedLabel;
+        private System.Windows.Forms.TextBox notesTextBox;
+        private System.Windows.Forms.Label notesLabel;
+        private System.Windows.Forms.Panel paymentReceivedPanel;
+        private System.Windows.Forms.RadioButton noRadioButton;
+        private System.Windows.Forms.RadioButton yesRadioButton;
+        private System.Windows.Forms.ComboBox sessionTypeComboBox;
+        private System.Windows.Forms.ComboBox clientComboBox;
+        private System.Windows.Forms.Button newClientButton;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label1;
     }
 }

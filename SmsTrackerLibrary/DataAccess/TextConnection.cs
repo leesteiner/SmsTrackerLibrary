@@ -11,6 +11,7 @@ namespace SmsTrackerLibrary.DataAccess
     {
         public const string ClientFile = "Clients.json";
         public const string SessionFile = "Sessions.json";
+        public const string EmailList = "EmailList.txt";
 
         public Client CreateClient(Client model)
         {

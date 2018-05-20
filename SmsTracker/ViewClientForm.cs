@@ -1,4 +1,5 @@
-﻿using SmsTrackerLibrary.DataAccess;
+﻿using SmsTrackerLibrary;
+using SmsTrackerLibrary.DataAccess;
 using SmsTrackerLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -12,13 +13,14 @@ using System.Windows.Forms;
 
 namespace SmsTracker
 {
-    public partial class ViewClientForm : Form
+    public partial class viewClientForm : Form
     {
         public Client returnClient { get; set; }
+        
 
         private List<Session> allSessions { get; set; } = GlobalConfig.Connection.GetAllSessions();
 
-        public ViewClientForm(Client c)
+        public viewClientForm(Client c)
         {
             InitializeComponent();
             firstNameTextBox.Text = c.FirstName;
@@ -31,21 +33,58 @@ namespace SmsTracker
 
         private void UpdateClientButton_Click(object sender, EventArgs e)
         {
-            Client test1 = new Client();
-            test1.Id = returnClient.Id;
-            test1.FirstName = firstNameTextBox.Text;
-            test1.LastName = lastNameTextBox.Text;
-            test1.EmailAddress = emailAddressTextBox.Text;
-            test1.CellphoneNumber = cellPhoneNumberTextBox.Text;
-            firstNameTextBox.Text = "";
-            lastNameTextBox.Text = "";
-            emailAddressTextBox.Text = "";
-            cellPhoneNumberTextBox.Text = "";
-            this.returnClient = test1;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (ValidateForm(out string errorMessage))
+            {
+                Client test1 = new Client();
+                test1.Id = returnClient.Id;
+                test1.FirstName = firstNameTextBox.Text;
+                test1.LastName = lastNameTextBox.Text;
+                test1.EmailAddress = emailAddressTextBox.Text;
+                test1.CellphoneNumber = cellPhoneNumberTextBox.Text;
+                test1.SessionIds = returnClient.SessionIds;
+                firstNameTextBox.Text = "";
+                lastNameTextBox.Text = "";
+                emailAddressTextBox.Text = "";
+                cellPhoneNumberTextBox.Text = "";
+                this.returnClient = test1;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+
+            else
+            {
+                MessageBox.Show(errorMessage);
+            }
+            
 
             
+        }
+
+        private bool ValidateForm(out string validationError)
+        {
+            bool output = true;
+            string errorMessage = "There are no errors";
+
+            if (!cellPhoneNumberTextBox.Text.ValidatePhoneNumber(false))
+            {
+                errorMessage = "Invalid Phone Number";
+                output = false;
+            }
+
+            if (!emailAddressTextBox.Text.ValidateEmailAddress(true))
+            {
+                output = false;
+                errorMessage = "Invalid Email Address";
+            }
+
+            if (String.IsNullOrEmpty(firstNameTextBox.Text) || String.IsNullOrEmpty(lastNameTextBox.Text))
+            {
+                output = false;
+                errorMessage = "You must provide a first and last name.";
+            }
+
+            validationError = errorMessage;
+            return output;
         }
 
         private void WireUpLists()
@@ -72,5 +111,13 @@ namespace SmsTracker
         {
             this.returnClient = returnClient;
         }
+
+        private void ViewClientForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
     }
 }

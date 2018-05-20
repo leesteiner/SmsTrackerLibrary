@@ -13,40 +13,56 @@ using System.Windows.Forms;
 
 namespace SmsTracker
 {
-    public partial class AddSessionForm : Form
+    public partial class addSessionForm : Form
     {
+        public Client returnClient { get; set; }
+
         private List<Client> Clients { get; set; } = GlobalConfig.Connection.GetAllClients();
 
-        public AddSessionForm()
+        public addSessionForm()
         {
             
             InitializeComponent();
             WireUpLists();
         }
 
-        private bool ValidateForm()
+        private bool ValidateForm(out string validationError)
         {
-            //TODO: Add validation
-            return true;
+            bool output = true;
+            string errorMessage = "There are no errors.";
+            
+
+            decimal number;
+            if (!decimal.TryParse(rateTextBox.Text, out number))
+            {
+                errorMessage = "Your rate cannot be converted to a decimal, please try again.";
+                output = false;
+            }
+
+
+            validationError = errorMessage;
+            return output;
+
+            
         }
 
 
         private void WireUpLists()
         {
             Clients = GlobalConfig.Connection.GetAllClients();
-            ClientComboBox.DataSource = null;
-            ClientComboBox.DataSource = Clients;
-            ClientComboBox.DisplayMember = "FullName";
+            clientComboBox.DataSource = null;
+            clientComboBox.DataSource = Clients;
+            clientComboBox.DisplayMember = "FullName";
 
             var sessionTypes = (SessionType[])Enum.GetValues(typeof(SessionType));
 
-            SessionTypeComboBox.DataSource = null;
-            SessionTypeComboBox.DataSource = sessionTypes;
+            sessionTypeComboBox.DataSource = null;
+            sessionTypeComboBox.DataSource = sessionTypes;
         }
 
         private void NewClientButton_Click(object sender, EventArgs e)
         {
-            AddClientForm f = new AddClientForm();
+            addClientForm f = new addClientForm();
             
             f.FormClosing += new FormClosingEventHandler(this.F_FormClosing);
             f.ShowDialog();
@@ -65,20 +81,20 @@ namespace SmsTracker
 
         private void CreateSessionButton_Click(object sender, EventArgs e)
         {
-            if (ValidateForm())
+            if (ValidateForm(out string errorMessage))
             {
-                Client selectedClient = Clients.Find(x => x.FullName == $"{ClientComboBox.Text}");
+                Client selectedClient = Clients.Find(x => x.FullName == $"{clientComboBox.Text}");
                 SessionType sessionType;
-                Enum.TryParse(RateTextBox.Text, out sessionType);
-                bool isChecked = YesRadioButton.Checked;
-
+                Enum.TryParse(sessionTypeComboBox.Text, out sessionType);
+                bool isChecked = yesRadioButton.Checked;
+                string strippedNotes = notesTextBox.Text.Replace(",", "");
                 Session model = new Session(
                     selectedClient,
-                    monthCalendar1.SelectionRange.Start, 
-                    decimal.Parse(RateTextBox.Text), 
+                    dateTimePicker1.Value, 
+                    decimal.Parse(rateTextBox.Text), 
                     sessionType, 
                     isChecked, 
-                    NotesTextBox.Text);
+                    strippedNotes);
 
                 Session newlyIdedSession = GlobalConfig.Connection.CreateSession(model);
 
@@ -86,14 +102,15 @@ namespace SmsTracker
                 clientToWhomIdsWillBeAdded.SessionIds.Add(newlyIdedSession.Id);
                 Clients.Insert(selectedClient.Id, clientToWhomIdsWillBeAdded);
                 Clients.Remove(selectedClient);
-
+                this.returnClient = clientToWhomIdsWillBeAdded;
+                this.DialogResult = DialogResult.OK;
                 this.Close();
 
                 
-                //TODO: Validate, validate, validate
-                //TODO: Refactor form names from Pascal to camelCase
-                //TODO: add view session form
-                //TODO: background / button colors
+                
+                
+                
+                //TODO: Across all forms, session ID is not being added to client's session ID list
 
             
 
@@ -101,7 +118,7 @@ namespace SmsTracker
             }
             else
             {
-                MessageBox.Show("There is invalid data in your form, please try again");
+                MessageBox.Show(errorMessage);
             }
                 
         }

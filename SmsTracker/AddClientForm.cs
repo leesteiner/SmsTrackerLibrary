@@ -1,4 +1,5 @@
-﻿using SmsTrackerLibrary.DataAccess;
+﻿using SmsTrackerLibrary;
+using SmsTrackerLibrary.DataAccess;
 using SmsTrackerLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -12,53 +13,68 @@ using System.Windows.Forms;
 
 namespace SmsTracker
 {
-    public partial class AddClientForm : Form
+    public partial class addClientForm : Form
     {
-        public AddClientForm()
+
+        public addClientForm()
         {
             InitializeComponent();
         }
 
         private void CreateClientButton_Click(object sender, EventArgs e)
         {
-            if(ValidateForm())
+            
+
+            if (ValidateForm(out string errorMessage))
             {
+                
                 Client model = new Client(
-                    FirstNameTextBox.Text,
-                    LastNameTextBox.Text,
-                    EmailAddressTextBox.Text,
-                    CellphoneNumberTextBox.Text,
+                    firstNameTextBox.Text,
+                    lastNameTextBox.Text,
+                    emailAddressTextBox.Text,
+                    cellphoneNumberTextBox.Text,
                     new List<int>());
 
                 GlobalConfig.Connection.CreateClient(model);
 
-                FirstNameTextBox.Text = "";
-                LastNameTextBox.Text = "";
-                EmailAddressTextBox.Text = "";
-                CellphoneNumberTextBox.Text = "";
+                firstNameTextBox.Text = "";
+                lastNameTextBox.Text = "";
+                emailAddressTextBox.Text = "";
+                cellphoneNumberTextBox.Text = "";
                 this.Close();
 
             }
             else
             {
-                MessageBox.Show("This information is invalid, please try again.");
+                MessageBox.Show(errorMessage);
             }
         }
 
 
-        private bool ValidateForm()
+        private bool ValidateForm(out string validationError)
         {
             bool output = true;
+            string errorMessage = "There are no errors";
 
-            int cellphoneCheck = 0;
-            int.TryParse(CellphoneNumberTextBox.Text, out cellphoneCheck);
-            if (cellphoneCheck == 0)
+            if (!cellphoneNumberTextBox.Text.ValidatePhoneNumber(false))
             {
-                MessageBox.Show("You've entered an invalid cellphone number, please try again.");
+                errorMessage = "Invalid Phone Number";
                 output = false;
-                
             }
-            
+
+            if (!emailAddressTextBox.Text.ValidateEmailAddress(true))
+            {
+                output = false;
+                errorMessage = "Invalid Email Address";
+            }
+
+            if (String.IsNullOrEmpty(firstNameTextBox.Text) || String.IsNullOrEmpty(lastNameTextBox.Text))
+            {
+                output = false;
+                errorMessage = "You must provide a first and last name.";
+            }
+
+            validationError = errorMessage;
             return output;
         }
         //TODO: still... fix null returned Client from CreateClient X'ed out
