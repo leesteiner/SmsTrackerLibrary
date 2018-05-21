@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace SmsTrackerLibrary.DataAccess
 {
-    public enum SessionType { Video, Audio, Reel, PianoTracks}
+    public enum SessionType { Video, Audio, Reel, Tracks, Other}
 }

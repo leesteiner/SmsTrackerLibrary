@@ -15,6 +15,18 @@ namespace SmsTracker
 {
     public partial class SmsTracker : Form
     {
+        //TODO: Add session Id to Client object in Session object
+        //TODO: Add Sort function? Implement IComparable on Client / Session models? Session by date, client by Last Name?
+        //TODO: Export to spreadsheet - print out sessions / print out client list
+        //TODO: Client count / session count
+        //TODO: Use DB
+        //TODO: Type : Change PianoTracks to Tracks
+        //TODO: Misc / voiceover? / other
+        //TODO: Prepopulate rate box based on sessionType
+        //TODO: Add discount box ? 
+        //TODO: Session list, highlight people who haven't paid?
+        //TODO: Add view session button to view client pane
+        
         private List<Client> Clients { get; set; } = GlobalConfig.Connection.GetAllClients();
         private Client returnClient { get; set; }
 
@@ -80,6 +92,7 @@ namespace SmsTracker
         private void WireUpLists()
         {
             Clients = GlobalConfig.Connection.GetAllClients();
+            
             clientListBox.DataSource = null;
             clientListBox.DataSource = Clients;
             clientListBox.DisplayMember = "FullName";
